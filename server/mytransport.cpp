@@ -1,18 +1,39 @@
 #include "mytransport.h"
+#include "mysocket.h"
+#include "mylink.h"
+#include <stdio.h>
+#include <iostream>
+#include <cstring>
+
+using namespace std;
 
 // The client myA port is 
 // chosen during the runtime randomly and the server myA port=65.  
 
+vodi MyT_rcv(SkBuf* buffer) {
+    MyL_rcv(buffer);
+    MyTHeader* head = new MyTHeader();
+    char* source = buffer->pointToTHeader();
+    memcpy(head, source, T_HEAD_LENGTH);
+    head->checkCheckSum();
+    head->checkDestinationPort();
+}
 // MyTHeader represents the constructor for a MyTHeader class
-MyTHeader::MyTHeader(short in_sAd, short in_len) {
-    cout << "Constructor for Server MyTHeader class" << endl;
-    sAd = in_sAd;
-    dAd = 65;
-    len = in_len;
-    checksum = sAd + dAd + len;
+MyTHeader::MyTHeader() {
 }
 
-// ~MyTHeader represents the desctuctor for a MyTHeader class
-MyTHeader::~MyTHeader() {
-    cout << "Destructor for Server MyTHeader class" << endl;
+void MyTHeader::checkCheckSum() {
+    if (checksum != sAd + dAd + len) {
+        cout << "incorrect value for checksum" << endl;
+    }
+}
+
+void MyTHeader::checkDestinationPort() {
+    if (dAd != SERVER_PORT) {
+        cout << "incorrect value for destination port" << endl;
+    }
+}
+
+void MyTHeader::printValues() {
+    cout << "sAd=" << sAd << " dAd=" << dAd << " len=" << len << " checksum=" << checksum << endl;
 }

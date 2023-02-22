@@ -1,6 +1,9 @@
-#include <iostream>
+#ifndef mytransport_h
+#define mytransport_h
 
-using namespace std;
+#include "mysocket.h"
+
+#define SERVER_PORT 65
 
 class MyTHeader{ 
     private: 
@@ -10,7 +13,14 @@ class MyTHeader{
         short checksum; // Error detection control only for MyT header. The Checksum field is the 
                         // sum of the Source port, Destination port and Length fields. 
     public: 
-        MyTHeader(short in_sAd, short in_len);
-        ~MyTHeader();
         //Constructor/s, Destructor and methods here 
+        MyTHeader();
+        void checkCheckSum();
+        void printValues();
+        void checkDestinationPort();
 }; 
+
+void MyT_rcv(SkBuf* buffer);
+
+
+#endif
