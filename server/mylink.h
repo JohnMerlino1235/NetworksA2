@@ -4,7 +4,7 @@
 #include "mysocket.h"
 
 #define SERVER_ADDRESS 32
-#define TRANSPORT_PROTOCOL 77
+#define TRANSPORT_PROTOCOL 53
 
 class MyLHeader{ 
     private: 

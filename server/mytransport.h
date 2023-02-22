@@ -3,7 +3,7 @@
 
 #include "mysocket.h"
 
-#define SERVER_PORT 65
+#define SERVER_PORT 1
 
 class MyTHeader{ 
     private: 
