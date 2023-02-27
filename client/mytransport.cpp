@@ -1,5 +1,6 @@
 #include "mytransport.h"
 using namespace std;
+#include <stdlib.h>
 
 // MyTHeader represents the constructor for a MyTHeader class
 MyTHeader::MyTHeader(short in_len) {
