@@ -16,7 +16,6 @@ class MyTHeader{
         //Constructor/s, Destructor and methods here 
         MyTHeader();
         void checkCheckSum();
-        void printValues();
         void checkDestinationPort();
 }; 
 
