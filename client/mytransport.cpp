@@ -3,8 +3,6 @@ using namespace std;
 
 // MyTHeader represents the constructor for a MyTHeader class
 MyTHeader::MyTHeader(short in_len) {
-    cout << "Constructor for Client MyTHeader class" << endl;
-
     //Source port: identifies the application sending the segment. It is the client port number (random between 2 and 30000). 
     // Providing a seed value
 	srand((unsigned) time(NULL));
@@ -22,7 +20,6 @@ MyTHeader::MyTHeader(short in_len) {
 
 // ~MyTHeader represents the desctuctor for a MyTHeader class
 MyTHeader::~MyTHeader() {
-    cout << "Destructor for Client MyTHeader class" << endl;
 }
 
 // MyT_send is called in sendto to send a segment 
