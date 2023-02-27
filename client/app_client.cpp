@@ -40,7 +40,7 @@ int main(void){
         }
 
         // asks the user if they want to keep measuring, the loop breaks and program ends if they say false
-        cout << "Would you like to keep measuring? (true or false) ";
+        cout << "Would you like to keep measuring? (1 for yes, 0 for no) ";
         cin >> keepMeasuring;
     }
 }
