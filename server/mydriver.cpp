@@ -31,6 +31,7 @@ void driver_rcv(SkBuf* buffer) {
     bool wait=true;
 
     while (wait) {
+		cout << "file closed" << endl;
         if (getline(infile,st_recv)) {
 	    memcpy(buffer->getHead(), st_recv.c_str(), st_recv.length());
 	    posFile = infile.tellg();
@@ -46,5 +47,6 @@ void driver_rcv(SkBuf* buffer) {
 	    infile.seekg(posFile);
 	}
     }
+	cout << "file closed" << endl;
     infile.close();
 }
