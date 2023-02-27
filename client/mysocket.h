@@ -28,8 +28,7 @@ class SkBuf{
         int get_head_length();
         void add_THeader(char* tSegment);
         void add_LHeader(char* lSegment);
-}; 
-
-void send_to(char* message);
+        void send_to(char* message);
+};
 
 #endif
