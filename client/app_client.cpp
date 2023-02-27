@@ -35,7 +35,7 @@ int main(void){
         if(type == 'M') {
             cin >> movement;
             char message[50];
-            sprintf(message, "%s %s %d %s", username, room, type, movement);
+            sprintf(message, "%s %s %d %c", username, room, type, movement);
             send_to(message);
         }
 
