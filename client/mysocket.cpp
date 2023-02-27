@@ -1,6 +1,7 @@
 #include "mysocket.h"
 #include "mytransport.h"
 #include "mylink.h"
+#include <cstring>
 
 //Tx path: m is the message and fA is the destination port
 SkBuf::SkBuf(char* m, short fA) {
