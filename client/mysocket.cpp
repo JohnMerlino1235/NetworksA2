@@ -20,7 +20,7 @@ SkBuf::~SkBuf() {
 
 }
 
-void SkBuf::send_to(char* message) {
+void send_to(char* message) {
     SkBuf* buffer = new SkBuf(message, SERVER_ADDRESS);
     myT_send(buffer);
 }
