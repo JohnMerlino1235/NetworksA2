@@ -1,8 +1,9 @@
-#include <cstdlib>
-#include <iostream>
-#include <ctime>
+#ifndef mytransport_h
+#define mytransport_h
+#include "mysocket.h"
 
-using namespace std;
+#define SERVER_PORT 65
+#define T_HEAD_LENGTH 8
 
 class MyTHeader{ 
     private: 
@@ -14,8 +15,6 @@ class MyTHeader{
     public: 
         MyTHeader(short in_len);
         ~MyTHeader();
-        //Constructor/s, Destructor and methods here 
-        //At least, this contains the following function: 
-        // MyT_send(...) → called in sendto to send a segment 
-        void MyT_send(/*fill in later*/);
 }; 
+
+void myT_send(SkBuf* buffer);

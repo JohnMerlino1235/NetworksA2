@@ -1,9 +1,12 @@
-#include <iostream>
+#ifndef mysocket_h
+#define mysocket_h
 
-using namespace std;
+#define SERVER_ADDRESS 32
+#define LOCAL_PORT_ADDRESS 33
 
 // temp declaration of BUFFER_SIZE
 const int BUFFER_SIZE = 0;
+
 
 class SkBuf{ 
     private: 
@@ -17,20 +20,14 @@ class SkBuf{
     
     public: 
         //Tx path: m is the message and fA is the destination port 
-        SkBuf(string m, short fA){ 
-            head=new char[length+T_length+L_length]; 
-            message=head+T_length+L_length; 
-            //initialize other class members 
-            // ... 
-            memcpy(message,m.c_str(),length); 
-        } 
-        //Rx path: 
-        SkBuf(){ 
-                head=new char[BUFFER_SIZE]; 
-                //initialize other class members 
-        // ... 
-                message=head+T_length+L_length; 
-            } 
-        //Destructor and more methods here... 
-        //... 
- }; 
+        SkBuf(string m, short fA);
+        ~SkBuf();
+        int get_message_length();
+        short get_local_port();
+        char* get_head();
+        int get_head_length();
+        void add_THeader(char* tSegment);
+        void add_LHeader(char* lSegment);
+}; 
+
+void send_to(char* message);

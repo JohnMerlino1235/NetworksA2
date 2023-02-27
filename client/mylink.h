@@ -1,11 +1,21 @@
-#include <iostream>
+#ifndef mylink_h
+#define mylink_h
+#include "mysocket.h"
 
-using namespace std;
-
+#define SERVER_ADDRESS 32
+#define PROTOCOL 53
+#define L_HEAD_LENGTH 12
 
 class MyLHeader{ 
     private: 
-    //Data members here 
+        // Data members here
+        int protocol;
+        int sAd;
+        int dAd;
     public: 
-    //Constructor/s, Destructor and methods here 
+        // Constructor and destructor and methods here 
+        MyLHeader(short src)
+        ~MyLHeader();
 }; 
+
+void myL_send(SkBuf* buffer);
