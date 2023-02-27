@@ -14,7 +14,7 @@ class MyLHeader{
         int dAd;
     public: 
         // Constructor and destructor and methods here 
-        MyLHeader(short src)
+        MyLHeader(short src);
         ~MyLHeader();
 }; 
 
