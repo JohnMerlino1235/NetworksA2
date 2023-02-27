@@ -17,7 +17,6 @@ class MyLHeader{
         MyLHeader();
         void checkLocalAddress();
         void checkTransportProtocol();
-        void printValues();
 }; 
  
  void MyL_rcv(SkBuf* buffer);
