@@ -13,7 +13,7 @@ SkBuf::SkBuf(char* m, short fA) {
     lAd = LOCAL_PORT_ADDRESS;
     fAd = fA;
 
-    memcpy(message, m.c_str(), length); 
+    memcpy(message, m, length); 
 }
 
 SkBuf::~SkBuf() {
