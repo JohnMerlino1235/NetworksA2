@@ -10,9 +10,9 @@ void myL_send(SkBuf* buffer) {
 
 // MyLHeader is the constructor for the MyLHeader class
 MyLHeader::MyLHeader(short src) {
-    protocol = (int)PROTOCOL;
     sAd = (int)src;
-    dAd = (int)SERVER_ADDRESS;
+    dAd = SERVER_ADDRESS;
+    protocol = PROTOCOL;
 }  
 
 // ~MyLHeader is the destructor for the MyLHeader class

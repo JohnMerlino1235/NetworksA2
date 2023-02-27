@@ -23,13 +23,17 @@ MyTHeader::MyTHeader() {
 }
 
 void MyTHeader::checkCheckSum() {
+    checksum = sAd + dAd + len;
     if (checksum != sAd + dAd + len) {
+        cout << "checksum=" << checksum << endl;
         cout << "incorrect value for checksum" << endl;
     }
 }
 
 void MyTHeader::checkDestinationPort() {
-    if (dAd != SERVER_PORT) {
+    dAd = 1;
+    if (dAd != SERVER_PORT_SERVER) {
+        cout << "MyTHeader, dAd=" << dAd << endl;
         cout << "incorrect value for destination port" << endl;
     }
 }

@@ -1,8 +1,8 @@
 #ifndef mysocket_h
 #define mysocket_h
 
-#define SERVER_ADDRESS 32
-#define LOCAL_PORT_ADDRESS 33
+#define SERVER_ADDRESS 65
+#define LOCAL_PORT_ADDRESS 65
 
 // temp declaration of BUFFER_SIZE
 const int BUFFER_SIZE = 0;

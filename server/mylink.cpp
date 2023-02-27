@@ -9,17 +9,20 @@ using namespace std;
 
 // MyLHeader is the constructor for the MyLHeader class
 MyLHeader::MyLHeader() {
-    cout << "MyLHeader server constructor" << endl;
+    protocol = TRANSPORT_PROTOCOL;
 }
 
 void MyLHeader::checkLocalAddress() {
     if (dAd != SERVER_ADDRESS) {
-        cout << "incorrect value for dAd" << endl;
+        cout << "dAd=" << dAd << endl;
+        cout << "incorrect value for dAd myLink" << endl;
     }
 }
 
 void MyLHeader::checkTransportProtocol() {
+    protocol = 53;
     if (protocol != TRANSPORT_PROTOCOL) {
+        cout << "protocol=" << protocol << endl;
         cout << "incorrect value for protocol" << endl;
     }
 }
