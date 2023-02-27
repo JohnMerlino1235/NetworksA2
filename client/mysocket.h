@@ -31,3 +31,5 @@ class SkBuf{
 }; 
 
 void send_to(char* message);
+
+#endif
