@@ -1,4 +1,5 @@
 #include "mytransport.h"
+#include "mylink.h"
 #include "time.h"
 #include <stdlib.h>
 
