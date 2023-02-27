@@ -27,10 +27,6 @@ void MyLHeader::checkTransportProtocol() {
     }
 }
 
-void MyLHeader::printValues() {
-    cout << "sAd=" << sAd << " dAd=" << dAd << " protocol=" << protocol << endl;
-}
-
 // MyL_rvc is called in MyT_rcv when ready to receive a fragment. 
 void MyL_rcv(SkBuf* buffer) {
     driver_rcv(buffer);
