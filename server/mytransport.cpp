@@ -37,7 +37,3 @@ void MyTHeader::checkDestinationPort() {
         cout << "incorrect value for destination port" << endl;
     }
 }
-
-void MyTHeader::printValues() {
-    cout << "sAd=" << sAd << " dAd=" << dAd << " len=" << len << " checksum=" << checksum << endl;
-}
