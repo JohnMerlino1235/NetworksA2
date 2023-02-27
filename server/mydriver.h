@@ -4,7 +4,7 @@
 #include "mysocket.h"
 
 //path here
-#define PATH 
+#define PATH "something"
 
 void driver_rcv(SkBuf* buffer);
 

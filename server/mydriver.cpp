@@ -6,6 +6,10 @@
 #include <fstream>
 #include <stdio.h>
 #include <string.h>
+#include "mydriver.h"
+#include "mysocket.h"
+#include "mylink.h"
+#include "mytransport.h"
 
 using namespace std;
 
@@ -43,5 +47,4 @@ void driver_rcv(SkBuf* buffer) {
 	}
     }
     infile.close();
-
 }

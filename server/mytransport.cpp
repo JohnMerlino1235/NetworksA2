@@ -10,7 +10,7 @@ using namespace std;
 // The client myA port is 
 // chosen during the runtime randomly and the server myA port=65.  
 
-vodi MyT_rcv(SkBuf* buffer) {
+void MyT_rcv(SkBuf* buffer) {
     MyL_rcv(buffer);
     MyTHeader* head = new MyTHeader();
     char* source = buffer->pointToTHeader();
