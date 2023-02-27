@@ -1,5 +1,5 @@
 #include "mytransport.h"
-using namespace std;
+#include "time.h"
 #include <stdlib.h>
 
 // MyTHeader represents the constructor for a MyTHeader class
