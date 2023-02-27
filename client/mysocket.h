@@ -20,7 +20,7 @@ class SkBuf{
     
     public: 
         //Tx path: m is the message and fA is the destination port 
-        SkBuf(string m, short fA);
+        SkBuf(char* m, short fA);
         ~SkBuf();
         int get_message_length();
         short get_local_port();
