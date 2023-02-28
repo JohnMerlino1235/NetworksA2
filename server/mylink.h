@@ -15,8 +15,6 @@ class MyLHeader{
     public: 
     //Constructor/s, Destructor and methods here 
         MyLHeader();
-        void checkLocalAddress();
-        void checkTransportProtocol();
 }; 
  
  void MyL_rcv(SkBuf* buffer);

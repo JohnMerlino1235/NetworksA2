@@ -8,15 +8,9 @@ using namespace std;
 
 SkBuf::SkBuf() {
     T_length = T_HEAD_LENGTH;
-    cout << "SkBuf T_length" << T_length << endl;
     L_length = L_HEAD_LENGTH;
-    cout << "SkBuf L_length" << L_length << endl;
     head = new char[BUFFER_SIZE];
-    cout << "SkBuf head" << head << endl;
     message = T_length + L_length + head;
-    cout << "SkBuf message" << message << endl;
-    message = "helo";
-    cout << "SkBuf message" << message << endl;
 }
 
 char* SkBuf::pointToLHeader() {
@@ -42,8 +36,5 @@ char* SkBuf::getMessage() {
 char* rcvfrom() {
     SkBuf* buffer = new SkBuf();
     MyT_rcv(buffer);
-    cout << "mysocket rcvFrom buffer: " << buffer << endl;
-    cout << "buffer->getMessage()" << buffer->getMessage();
-    cout << "buffer->getHead()" << buffer->getHead();
     return buffer->getHead();
 }

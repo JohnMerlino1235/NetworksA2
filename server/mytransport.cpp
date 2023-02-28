@@ -12,28 +12,11 @@ using namespace std;
 
 void MyT_rcv(SkBuf* buffer) {
     MyL_rcv(buffer);
-    cout << "mytransport rcvFrom buffer: " << buffer << endl;
     MyTHeader* t_head = new MyTHeader();
     char* source = buffer->pointToTHeader();
     memcpy(t_head, source, T_HEAD_LENGTH);
-    t_head->checkCheckSum();
-    t_head->checkDestinationPort();
 }
 // MyTHeader represents the constructor for a MyTHeader class
 MyTHeader::MyTHeader() {
 }
 
-void MyTHeader::checkCheckSum() {
-    checksum = sAd + dAd + len;
-    if (checksum != sAd + dAd + len) {
-        cout << "checksum=" << checksum << endl;
-        cout << "incorrect value for checksum" << endl;
-    }
-}
-
-void MyTHeader::checkDestinationPort() {
-    if (dAd != SERVER_PORT_SERVER) {
-        cout << "MyTHeader, dAd=" << dAd << endl;
-        cout << "incorrect value for destination port" << endl;
-    }
-}
