@@ -6,7 +6,8 @@ using namespace std;
 int main(void) {
     while (true) {
         char* message = rcvfrom();
-        cout << message << endl;
+        cout << "hlelo world" << endl;
+        cout << "message" << message << endl;
     }
 
     return 0;

@@ -12,11 +12,12 @@ using namespace std;
 
 void MyT_rcv(SkBuf* buffer) {
     MyL_rcv(buffer);
-    MyTHeader* head = new MyTHeader();
+    cout << "mytransport rcvFrom buffer: " << buffer << endl;
+    MyTHeader* t_head = new MyTHeader();
     char* source = buffer->pointToTHeader();
-    memcpy(head, source, T_HEAD_LENGTH);
-    head->checkCheckSum();
-    head->checkDestinationPort();
+    memcpy(t_head, source, T_HEAD_LENGTH);
+    t_head->checkCheckSum();
+    t_head->checkDestinationPort();
 }
 // MyTHeader represents the constructor for a MyTHeader class
 MyTHeader::MyTHeader() {

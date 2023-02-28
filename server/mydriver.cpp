@@ -20,6 +20,7 @@ code to delete any content of the file before the server program execution:
  */
 
 void driver_rcv(SkBuf* buffer) {
+	cout << "mydriver rcvFrom buffer: " << buffer << endl;
     ifstream infile(PATH);
     if (!infile) {
         cerr << "Error opening the file for reading\n";

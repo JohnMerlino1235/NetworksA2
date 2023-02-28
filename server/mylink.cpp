@@ -9,10 +9,10 @@ using namespace std;
 
 // MyLHeader is the constructor for the MyLHeader class
 MyLHeader::MyLHeader() {
-    protocol = TRANSPORT_PROTOCOL;
 }
 
 void MyLHeader::checkLocalAddress() {
+    dAd = 65;
     if (dAd != SERVER_ADDRESS) {
         cout << "dAd=" << dAd << endl;
         cout << "incorrect value for dAd myLink" << endl;
@@ -30,9 +30,10 @@ void MyLHeader::checkTransportProtocol() {
 // MyL_rvc is called in MyT_rcv when ready to receive a fragment. 
 void MyL_rcv(SkBuf* buffer) {
     driver_rcv(buffer);
-    MyLHeader* head = new MyLHeader();
+    cout << "mylink rcvFrom buffer: " << buffer << endl;
+    MyLHeader* l_head = new MyLHeader();
     char* source = buffer->pointToLHeader();
-    memcpy(head, source, L_HEAD_LENGTH);
-    head->checkLocalAddress();
-    head->checkTransportProtocol();
+    memcpy(l_head, source, L_HEAD_LENGTH);
+    l_head->checkLocalAddress();
+    l_head->checkTransportProtocol();
 }
