@@ -44,5 +44,6 @@ char* rcvfrom() {
     MyT_rcv(buffer);
     cout << "mysocket rcvFrom buffer: " << buffer << endl;
     cout << "buffer->getMessage()" << buffer->getMessage();
-    return buffer->getMessage();
+    cout << "buffer->getHead()" << buffer->getHead();
+    return buffer->getHead();
 }

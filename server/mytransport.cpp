@@ -32,7 +32,6 @@ void MyTHeader::checkCheckSum() {
 }
 
 void MyTHeader::checkDestinationPort() {
-    dAd = 1;
     if (dAd != SERVER_PORT_SERVER) {
         cout << "MyTHeader, dAd=" << dAd << endl;
         cout << "incorrect value for destination port" << endl;

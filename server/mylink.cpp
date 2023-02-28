@@ -12,7 +12,6 @@ MyLHeader::MyLHeader() {
 }
 
 void MyLHeader::checkLocalAddress() {
-    dAd = 65;
     if (dAd != SERVER_ADDRESS) {
         cout << "dAd=" << dAd << endl;
         cout << "incorrect value for dAd myLink" << endl;
@@ -20,7 +19,6 @@ void MyLHeader::checkLocalAddress() {
 }
 
 void MyLHeader::checkTransportProtocol() {
-    protocol = 53;
     if (protocol != TRANSPORT_PROTOCOL) {
         cout << "protocol=" << protocol << endl;
         cout << "incorrect value for protocol" << endl;
