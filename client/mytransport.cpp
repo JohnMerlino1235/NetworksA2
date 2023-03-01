@@ -2,6 +2,8 @@
 #include "mylink.h"
 #include "time.h"
 #include <stdlib.h>
+#include <iostream>
+using namespace std;
 
 // MyTHeader represents the constructor for a MyTHeader class
 MyTHeader::MyTHeader(short in_len) {
@@ -10,8 +12,6 @@ MyTHeader::MyTHeader(short in_len) {
 	srand((unsigned) time(NULL));
     // get a random number
     short randomPortNumber = 2 + (rand() % 30000);
-    sAd = randomPortNumber;
-
     // Destination port: identifies the application which is the destination of the segment (always 65)
     dAd = (short)SERVER_PORT;
     // the length of the message
@@ -28,5 +28,6 @@ MyTHeader::~MyTHeader() {
 void myT_send(SkBuf* buffer) {
     MyTHeader* tHeader = new MyTHeader(buffer->get_message_length());
     buffer->add_THeader((char*)tHeader);
+    cout << "buffer -> get_message_length " << buffer->get_head() << endl;
     myL_send(buffer);
 }

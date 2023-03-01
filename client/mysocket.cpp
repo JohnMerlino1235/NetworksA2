@@ -2,6 +2,9 @@
 #include "mytransport.h"
 #include "mylink.h"
 #include <cstring>
+#include <iostream>
+
+using namespace std;
 
 //Tx path: m is the message and fA is the destination port
 SkBuf::SkBuf(char* m, short fA) {
@@ -21,6 +24,7 @@ SkBuf::~SkBuf() {
 }
 
 void send_to(char* message) {
+    cout << "socket send_to" << message << endl;
     SkBuf* buffer = new SkBuf(message, SERVER_ADDRESS);
     myT_send(buffer);
 }
@@ -42,9 +46,9 @@ int SkBuf::get_head_length() {
 }
 
 void SkBuf::add_THeader(char* tSegment) {
-    memcpy(head + L_length, tSegment, T_length);
+    memcpy(tSegment, head + L_length, T_length);
 }
 
 void SkBuf::add_LHeader(char* lSegment) {
-    memcpy(head, lSegment, L_length);
+    memcpy(lSegment, head, L_length);
 }
