@@ -24,7 +24,6 @@ SkBuf::~SkBuf() {
 }
 
 void send_to(char* message) {
-    cout << "socket send_to" << message << endl;
     SkBuf* buffer = new SkBuf(message, SERVER_ADDRESS);
     myT_send(buffer);
 }
