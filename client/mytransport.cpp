@@ -28,6 +28,5 @@ MyTHeader::~MyTHeader() {
 void myT_send(SkBuf* buffer) {
     MyTHeader* tHeader = new MyTHeader(buffer->get_message_length());
     buffer->add_THeader((char*)tHeader);
-    cout << "buffer -> get_message_length " << buffer->get_head() << endl;
     myL_send(buffer);
 }
