@@ -1,9 +1,6 @@
 #ifndef mytransport_h
 #define mytransport_h
-
 #include "mysocket.h"
-
-#define SERVER_PORT_SERVER 1
 
 class MyTHeader{ 
     private: 
