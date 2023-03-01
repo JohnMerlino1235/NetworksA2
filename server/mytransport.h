@@ -12,6 +12,8 @@ class MyTHeader{
     public: 
         //Constructor/s, Destructor and methods here 
         MyTHeader();
+        void check_checksum();
+        void check_destination_port();
 }; 
 
 void MyT_rcv(SkBuf* buffer);

@@ -19,3 +19,21 @@ void MyL_rcv(SkBuf* buffer) {
     char* source = buffer->pointToLHeader();
     memcpy(l_head, source, L_HEAD_LENGTH);
 }
+
+// checks to see that the local address was correct
+void MyLHeader::check_local_address() {
+    cout << "local address expected " << SERVER_ADDRESS << endl;
+    cout << "local address actual " << dAd << endl;
+    if (dAd != SERVER_ADDRESS) {
+        cout << "The destination address doesn't match the server address!" << endl;
+    }
+}
+
+// checks to see that the protocol was correct
+void MyLHeader::check_protocol() {
+    cout << "protocol expected " << TRANSPORT_PROTOCOL << endl;
+    cout << "protocol actual " << protocol << endl;
+    if (protocol != TRANSPORT_PROTOCOL) {
+        cout << "The protocol is incorrect!" << endl;
+    }
+}
