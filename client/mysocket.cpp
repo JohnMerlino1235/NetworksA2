@@ -7,24 +7,29 @@
 using namespace std;
 
 //Tx path: m is the message and fA is the destination port
-SkBuf::SkBuf(char* m, short fA) {
-    head = new char[length + T_length + L_length]; 
-    message = head + T_length + L_length; 
+SkBuf::SkBuf(string m, short fA) {
+    length = m.size();
     T_length = T_HEAD_LENGTH;
     L_length = L_HEAD_LENGTH;
-    length = strlen(m);
+    head = new char[length + T_length + L_length]; 
+    message = head + T_length + L_length; 
     lAd = LOCAL_PORT_ADDRESS;
     fAd = fA;
-
-    memcpy(message, m, length); 
+    memcpy(message, m.c_str(), length);
+    // memcpy(message + 24, m, length);
 }
 
 SkBuf::~SkBuf() {
 
 }
 
-void send_to(char* message) {
+void send_to(string message) {
     SkBuf* buffer = new SkBuf(message, SERVER_ADDRESS);
+    cout << "MESSAGE IN SEND TO" << message << endl;
+
+    string st(buffer->get_head() + 20, 100);
+    cout << "HERE... " << st << endl;
+
     myT_send(buffer);
 }
 
@@ -42,12 +47,4 @@ char* SkBuf::get_head() {
 
 int SkBuf::get_head_length() {
     return length + T_length + L_length;
-}
-
-void SkBuf::add_THeader(char* tSegment) {
-    memcpy(tSegment, head + L_length, T_length);
-}
-
-void SkBuf::add_LHeader(char* lSegment) {
-    memcpy(lSegment, head, L_length);
 }

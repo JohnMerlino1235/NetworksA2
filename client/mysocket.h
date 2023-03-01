@@ -1,5 +1,8 @@
 #ifndef mysocket_h
 #define mysocket_h
+#include <cstring>
+#include <iostream>
+using namespace std;
 
 #define SERVER_ADDRESS 65
 #define LOCAL_PORT_ADDRESS 65
@@ -20,16 +23,14 @@ class SkBuf{
     
     public: 
         //Tx path: m is the message and fA is the destination port 
-        SkBuf(char* m, short fA);
+        SkBuf(string m, short fA);
         ~SkBuf();
         int get_message_length();
         short get_local_port();
         char* get_head();
         int get_head_length();
-        void add_THeader(char* tSegment);
-        void add_LHeader(char* lSegment);
 };
 
-void send_to(char* message);
+void send_to(string message);
 
 #endif

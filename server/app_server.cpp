@@ -5,7 +5,7 @@ using namespace std;
 
 int main(void) {
     while (true) {
-        char* message = rcvfrom();
+        string message = rcvfrom();
         cout << message << endl;
     }
 

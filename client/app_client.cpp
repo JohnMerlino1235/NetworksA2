@@ -1,15 +1,16 @@
 #include "mysocket.h"
 #include <cstdio>
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 int main(void){
     // setting up variables
-    char username[20];
-    char room[20];
-    char type;
+    string username;
+    string room;
+    char type[1];
     int value;
-    char movement;
+    char movement[1];
     bool keepMeasuring = true;
 
 
@@ -25,17 +26,18 @@ int main(void){
         cin >> type;
         cout << "Please enter the value: ";
         // if the type is temp of humidity it takes in a number value and formats the message
-        if(type == 'T' || type == 'H'){
+        if(strcmp(type, "T") == 0 || strcmp(type, "H") == 0){
             cin >> value;
-            char message[50];
-            sprintf(message, "%s %s %d %d", username, room, type, value);
+            string message = username + " " + room + " " + type + " " + to_string(value);
+            // sprintf(message, "%s %s %s %d", username, room, type, value);
             send_to(message);
         }
         // if the type is movement it takes in a char value and formats the message
-        if(type == 'M') {
+        if(strcmp(type, "M") == 0) {
             cin >> movement;
-            char message[50];
-            sprintf(message, "%s %s %d %c", username, room, type, movement);
+            // string message;
+            string message = username + " " + room + " " + type + " " + movement;
+            // sprintf(message, "%s %s %s %s", username, room, type, movement);
             send_to(message);
         }
 

@@ -1,5 +1,10 @@
 #ifndef mysocket_h
 #define mysocket_h
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <string.h>
+using namespace std;
 
 #define BUFFER_SIZE 128
 #define T_HEAD_LENGTH 8
@@ -18,10 +23,12 @@ class SkBuf {
         SkBuf();
         char* pointToLHeader();
         char* pointToTHeader();
-        char* getMessage();
+        char* pointToMessage();
+        string getMessage();
+        void setLength(int len);
         char* getHead();
 };
 
-char* rcvfrom();
+string rcvfrom();
 
 #endif

@@ -32,7 +32,10 @@ void driver_rcv(SkBuf* buffer) {
 
     while (wait) {
         if (getline(infile,st_recv)) {
-	    memcpy(buffer->getHead(), st_recv.c_str(), st_recv.length());
+		memcpy(buffer->getHead(), st_recv.c_str(), st_recv.length());
+	    // memcpy(buffer->getHead(), st_recv.c_str() + T_HEAD_LENGTH + L_HEAD_LENGTH, st_recv.length());
+		cout << "cstr " << st_recv.c_str() << endl;
+		cout << "length " << st_recv.length() << endl;
 	    posFile = infile.tellg();
 	    wait=false;
 	}
